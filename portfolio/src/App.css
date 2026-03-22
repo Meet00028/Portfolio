@@ -1,0 +1,91 @@
+/* App-specific styles */
+
+/* Ensure smooth scrolling behavior */
+html {
+  scroll-behavior: auto;
+}
+
+/* Radial gradient for light section */
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center top, rgba(255,255,255,0.5) 0%, transparent 60%);
+}
+
+/* Ensure pinned sections stack correctly */
+.pinned-section {
+  will-change: transform;
+}
+
+/* Project card hover effect */
+.project-card {
+  transition: transform 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.project-card:hover {
+  transform: scale(1.02) !important;
+}
+
+/* Button and link interactions */
+button, a {
+  cursor: pointer;
+}
+
+/* Ensure images don't cause layout shifts */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile responsiveness for pinned sections */
+@media (max-width: 768px) {
+  .pinned-section {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  .project-card {
+    width: 80vw !important;
+    height: 50vh !important;
+    left: 10vw !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .scroll-indicator {
+    animation: none;
+  }
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #FF4D2E;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF4D2E;
+}
